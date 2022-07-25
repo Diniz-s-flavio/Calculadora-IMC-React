@@ -1,2 +1,13 @@
 # Calculadora IMC React
- Essa é um simples calculadora de IMC feita com uso da tecnologia React, utilizada na criação de aplicações com JavaScript
+Portfólio de desenvolvedor
+
+## Objetivo
+
+Criar uma Calculadora de IMC, utilizando de JavaScript, HTML e CSS . O controle de realizes desse projeto sera realizado no GitHub
+
+## Icones
+
+:package: Nova Funcionalidade
+:up: Atualização
+:beetle: Correção de bug
+:checkered_flag: Releaze
