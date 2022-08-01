@@ -1,13 +1,22 @@
-import React,{useState} from "react";
+import React from "react";
 
 
-export default function Calcular(props){
-    const calc=()=>{
-        props.sr(props.p/(props.a*props.a))
+export default class Calcular extends React.Component{
+    constructor(){
+        super()
+        this.c=this.fcalc.bind(this)
+    }
+    fcalc=()=>{
+        const r=this.props.p/(this.props.a*this.props.a)
+        this.props.sr(r)
+        console.log(r)
       }
-    return(
-      <div>
-        <button className="button_calc" onClick={calc}>Calcular</button>
-      </div>
-    )
+
+    render(){
+        return(
+        <div>
+            <button className="button_calc" onClick={this.c}>Calcular</button>
+        </div>
+        )
+    }
 }

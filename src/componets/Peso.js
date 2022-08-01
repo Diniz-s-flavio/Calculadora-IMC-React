@@ -1,14 +1,19 @@
-import React,{useState} from "react";
+import React from "react";
 
 
-export default function Peso(props){
+export default class Peso extends React.Component{
+    constructor(){
+        super()
+    }
 
+    render(){
     return(
         <div>
           <label>
             Peso
-            <input className="input_calc" type="text" value={props.p} onChange={(e)=>{props.sp(e.target.value)}}/>
+            <input className="input_calc" type="text" value={this.props.p} onChange={(e)=>{this.props.sp(e.target.value)}}/>
           </label>
         </div>
-      )   
+      )
+    } 
 }

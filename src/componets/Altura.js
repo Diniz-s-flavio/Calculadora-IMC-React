@@ -1,13 +1,18 @@
-import React,{useState} from "react";
+import React from "react";
 
 
-export default function Altura(props){
+export default class Altura extends React.Component{
+    constructor(){
+        super()
+    }
+    render(){
     return(
         <div>
           <label>
             Altura
-            <input className="input_calc" type="text" value={props.a} onChange={(e)=>{props.sa(e.target.value)}}/>
+            <input className="input_calc" type="text" value={this.props.a} onChange={(e)=>{this.props.sa(e.target.value)}}/>
           </label>
         </div>
       )
+    }
 }

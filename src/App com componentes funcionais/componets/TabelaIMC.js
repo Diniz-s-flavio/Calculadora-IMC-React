@@ -1,8 +1,7 @@
-import React from "react"
+import React,{useState} from "react";
 
-export default class TabelaIMC extends React.Component{
 
-  render(){
+export default function TabelaIMC(){
     return(
         <table border='1' style={{borderCollapse:'collapse'}}>
               <thead>
@@ -21,7 +20,7 @@ export default class TabelaIMC extends React.Component{
                   <td>Abaixo de 18,5</td>
                 </tr>
                 <tr>
-                  <td>Peso Normal</td>
+                  <td>Abaixo do Normal</td>
                   <td>Entre 18,5 e 24,9 </td>
                 </tr>
                 <tr>
@@ -43,5 +42,4 @@ export default class TabelaIMC extends React.Component{
               </tbody>
             </table>
       )
-  }
 }
