@@ -1,88 +1,18 @@
 import React,{useState} from "react"
 import './App.css'
+import TabelaIMC from "./componets/TabelaIMC"
+import Peso from "./componets/Peso"
+import Altura from "./componets/Altura"
+import Calcular from "./componets/Calcular"
+import Resultado from "./componets/Resultado"
 
-const tabelaIMC=()=>{
-  return(
-    <table border='1' style={{borderCollapse:'collapse'}}>
-          <thead>
-            <tr>
-              <th>
-                Classificação
-              </th>
-            <th>
-              IMC
-            </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Abaixo do Peso</td>
-              <td>Abaixo de 18,5</td>
-            </tr>
-            <tr>
-              <td>Abaixo do Normal</td>
-              <td>Entre 18,5 e 24,9 </td>
-            </tr>
-            <tr>
-              <td>Sobrepeso</td>
-              <td>Entre 25 e 29,9 </td>
-            </tr>
-            <tr>
-              <td>Obesidade de Grau I</td>
-              <td>Entre 30 e 34,9 </td>
-            </tr>
-            <tr>
-            <td>Obesidade de Grau II</td>
-            <td>Entre 35 e 39,9 </td>
-            </tr>
-            <tr>
-              <td>Obesidade de Grau III ou morbida</td>
-              <td>Acima de 40 </td>
-            </tr>
-          </tbody>
-        </table>
-  )
-}
-
-const fpeso=(p,sp)=>{
-  return(
-    <div>
-      <label>
-        Peso
-        <input className="input_calc" type="text" value={p} onChange={(e)=>{sp(e.target.value)}}/>
-      </label>
-    </div>
-  )
-}
-
-const faltura=(a,sa)=>{
-  return(
-    <div>
-      <label>
-        Altura
-        <input className="input_calc" type="text" value={a} onChange={(e)=>{sa(e.target.value)}}/>
-      </label>
-    </div>
-  )
-}
 
 const fcalcular=(p,a,sr)=>{
-    const calc=()=>{
-      sr(p/(a*a))
-    }
-  return(
-    <div>
-      <button className="button_calc" onClick={calc}>Calcular</button>
-    </div>
-  )
+    
 }
 
 const fresultado=(r)=>{
-  return(
-    <div>
-      <p id="result_calc">Resultado: {r.toFixed(2)}</p>
-    </div>
-  )
+  
 }
 
 export default function App() {
@@ -94,11 +24,11 @@ export default function App() {
   return (
     <>
     <div className="div_input">
-      {fpeso(peso,setPeso)}
-      {faltura(altura,setAltura)}
-      {fcalcular(peso,altura,setResultado)}
-      {fresultado(resultado)}
-      {tabelaIMC()}
+      <Peso p={peso} sp={setPeso} />
+      <Altura a={altura} sa={setAltura} />
+      <Calcular p={peso} a={altura} sr={setResultado}/>
+      <Resultado r={resultado}/>
+      <TabelaIMC/>
     </div>
     </>
   );
