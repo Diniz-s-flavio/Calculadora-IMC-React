@@ -1,5 +1,4 @@
 import React,{useState} from "react"
-import './App.css'
 
 const tabelaIMC=()=>{
   return(
@@ -49,7 +48,7 @@ const fpeso=(p,sp)=>{
     <div>
       <label>
         Peso
-        <input className="input_calc" type="text" value={p} onChange={(e)=>{sp(e.target.value)}}/>
+        <input type="text" value={p} onChange={(e)=>{sp(e.target.value)}}/>
       </label>
     </div>
   )
@@ -60,7 +59,7 @@ const faltura=(a,sa)=>{
     <div>
       <label>
         Altura
-        <input className="input_calc" type="text" value={a} onChange={(e)=>{sa(e.target.value)}}/>
+        <input type="text" value={a} onChange={(e)=>{sa(e.target.value)}}/>
       </label>
     </div>
   )
@@ -72,7 +71,7 @@ const fcalcular=(p,a,sr)=>{
     }
   return(
     <div>
-      <button className="button_calc" onClick={calc}>Calcular</button>
+      <button onClick={calc}>Calcular</button>
     </div>
   )
 }
@@ -80,7 +79,7 @@ const fcalcular=(p,a,sr)=>{
 const fresultado=(r)=>{
   return(
     <div>
-      <p id="result_calc">Resultado: {r.toFixed(2)}</p>
+      <p>Resultado: {r.toFixed(2)}</p>
     </div>
   )
 }
@@ -93,13 +92,11 @@ export default function App() {
 
   return (
     <>
-    <div className="div_input">
       {fpeso(peso,setPeso)}
       {faltura(altura,setAltura)}
       {fcalcular(peso,altura,setResultado)}
       {fresultado(resultado)}
       {tabelaIMC()}
-    </div>
     </>
   );
 }
